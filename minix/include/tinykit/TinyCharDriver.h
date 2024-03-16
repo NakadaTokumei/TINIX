@@ -12,7 +12,12 @@ using TinyCharDevID = unsigned int;
 
 class TinyCharDriver
 {
+    bool _running;
 protected:
+    TinyCharDriver() :
+        _running(false)
+    {}
+
     virtual int
     Open(
         devminor_t minor,
