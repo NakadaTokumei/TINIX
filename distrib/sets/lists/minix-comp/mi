@@ -1802,6 +1802,8 @@
 ./usr/include/termcap.h                                 minix-comp
 ./usr/include/termios.h                                 minix-comp
 ./usr/include/time.h                                    minix-comp
+./usr/include/tinykit                                   minix-comp
+./usr/include/tinykit/TinyCharDriver.h                  minix-comp
 ./usr/include/ttyent.h                                  minix-comp
 ./usr/include/tzfile.h                                  minix-comp
 ./usr/include/ucontext.h                                minix-comp
@@ -2145,6 +2147,8 @@
 ./usr/lib/libtermlib_pic.a                              minix-comp
 ./usr/lib/libtimers.a                                   minix-comp
 ./usr/lib/libtimers_pic.a                               minix-comp
+./usr/lib/libtinykit.a                                  minix-comp
+./usr/lib/libtinykit_pic.a                              minix-comp
 ./usr/lib/libusb.a                                      minix-comp
 ./usr/lib/libusb_pic.a                                  minix-comp
 ./usr/lib/libutil.a                                     minix-comp

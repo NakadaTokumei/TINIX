@@ -25,6 +25,10 @@ SUBDIR+=	libtimers
 SUBDIR+=	libusb
 SUBDIR+=	libvtreefs
 
+# + For TINIX
+SUBDIR+=	libtinykit
+# - For TINIX
+
 .if (${HAVE_LIBGCC} == "no")
 SUBDIR+=	libgcc_s_empty
 .endif

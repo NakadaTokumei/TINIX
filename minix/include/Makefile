@@ -15,5 +15,9 @@ SUBDIR+=	minix
 SUBDIR+=	net
 SUBDIR+=	sys
 
+# + For MINIX
+SUBDIR+=	tinykit
+# - For MINIX
+
 .include <bsd.prog.mk>
 .include <bsd.subdir.mk>
