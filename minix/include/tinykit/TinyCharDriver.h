@@ -13,6 +13,7 @@ using TinyCharDevID = unsigned int;
 class TinyCharDriver
 {
     bool _running;
+
 protected:
     TinyCharDriver() :
         _running(false)
@@ -94,7 +95,7 @@ protected:
     ) = 0;
 
 public:
-    void Task(void);
+    void Task(void) final;
 };
 
 #endif
