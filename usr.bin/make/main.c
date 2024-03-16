@@ -148,6 +148,8 @@ __RCSID("$NetBSD: main.c,v 1.233 2015/09/10 17:15:11 sjg Exp $");
 #define	DEFMAXLOCAL DEFMAXJOBS
 #endif	/* DEFMAXLOCAL */
 
+FILE* 		debug_file;
+
 Lst			create;		/* Targets to be made */
 time_t			now;		/* Time at start of make */
 GNode			*DEFAULT;	/* .DEFAULT node */

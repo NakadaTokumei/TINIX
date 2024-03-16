@@ -77,6 +77,8 @@ __RCSID("$NetBSD: options.c,v 1.116 2015/04/11 15:41:33 christos Exp $");
  * Routines which handle command line options
  */
 
+char* chdname;
+
 static int nopids;		/* tar mode: suppress "pids" for -p option */
 static char flgch[] = FLGCH;	/* list of all possible flags (pax) */
 static OPLIST *ophead = NULL;	/* head for format specific options -x */

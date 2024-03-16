@@ -6,7 +6,7 @@ cd `dirname $0`
 
 # Configure fetch method
 URL="http://www.minix3.org/pkgsrc/distfiles/minix/3.4.0/binutils-2.23.2.tar.bz2"
-BACKUP_URL="http://ftp.gnu.org/gnu/binutils/binutils-2.23.2.tar.bz2"
+BACKUP_URL="https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.bz2"
 FETCH=ftp
 which curl >/dev/null
 if [ $? -eq 0 ]; then
@@ -16,15 +16,15 @@ fi
 # Fetch sources if not available
 if [ ! -d dist ];
 then
-	if [ ! -f binutils-2.23.2.tar.bz2 ]; then
+	if [ ! -f binutils-2.24.2.tar.bz2 ]; then
 		$FETCH $URL
 		if [ $? -ne 0 ]; then
 			$FETCH $BACKUP_URL
 		fi
 	fi
 
-	tar -oxjf binutils-2.23.2.tar.bz2 && \
-	mv binutils-2.23.2 dist && \
+	tar -oxjf binutils-2.24.2.tar.bz2 && \
+	mv binutils-2.24.2 dist && \
 	cd dist && \
 	cat ../patches/* | patch -p1
 	cp ../files/yyscript.h gold && \
