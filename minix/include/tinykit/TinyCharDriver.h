@@ -14,6 +14,41 @@ class TinyCharDriver
 {
     bool _running;
 
+    void
+    Process(
+        message& message,
+        int ipcStatus
+    );
+
+    void
+    Reply(
+        message& msg,
+        int ipcStatus,
+        int result
+    );
+
+    void
+    SendReply(
+        endpoint_t endpt,
+        message& msg,
+        int ipcStatus
+    );
+
+    int
+    OpenOperatioon(
+        message& msg
+    );
+
+    int
+    CloseOperation(
+        message& msg
+    );
+
+    int
+    ReadOperation(
+        message& msg
+    );
+
 protected:
     TinyCharDriver() :
         _running(false)
@@ -24,12 +59,12 @@ protected:
         devminor_t minor,
         int access,
         endpoint_t userEndpt
-    ) = 0;
+    ) { return OK; }
 
     virtual int
     Close(
         devminor_t minor
-    ) = 0;
+    ) { return OK; }
 
     virtual ssize_t
     Read(
@@ -40,7 +75,7 @@ protected:
         size_t size,
         int flags,
         TinyCharDevID id
-    ) = 0;
+    ) { return OK; }
 
     virtual ssize_t
     Write(
@@ -51,7 +86,7 @@ protected:
         size_t size,
         int flags,
         TinyCharDevID id
-    ) = 0;
+    ) { return OK; }
 
     virtual int
     Ioctl(
@@ -62,40 +97,41 @@ protected:
         int flags,
         endpoint_t userEndpt,
         TinyCharDevID id
-    ) = 0;
+    ) { return OK; }
 
     virtual int
     Cancel(
         devminor_t minor,
         endpoint_t endpt,
         TinyCharDevID id
-    ) = 0;
+    ) { return OK; }
 
     virtual int
     Select(
         devminor_t minor,
         unsigned int ops,
         endpoint_t endpt
-    ) = 0;
+    ) { return OK; }
 
     virtual void
     Intr(
         unsigned int mask
-    ) = 0;
+    ) { return OK; }
     
     virtual void
     Alarm(
         clock_t stamp
-    ) = 0;
+    ) { return OK; }
 
     virtual void
     Other(
-        message* pMsg,
+        message& pMsg,
         int ipcStatus
-    ) = 0;
+    ) { return OK; }
 
 public:
-    void Task(void) final;
+    virtual void 
+    Start(void);
 };
 
 #endif
